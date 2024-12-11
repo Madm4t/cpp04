@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 16:37:08 by mgering           #+#    #+#             */
-/*   Updated: 2024/12/11 16:37:08 by mgering          ###   ########.fr       */
+/*   Created: 2024/12/11 16:36:21 by mgering           #+#    #+#             */
+/*   Updated: 2024/12/11 17:08:34 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include <iostream>
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class IMateriaSource
+class MateriaSource : public IMateriaSource
 {
+private:
+	AMateria* _templates[4];
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria*) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	MateriaSource();
+	MateriaSource(const MateriaSource& other);
+	MateriaSource &operator=(const MateriaSource &other); 
+	virtual ~MateriaSource();
+
+	void learnMateria(AMateria* m) override;
+	AMateria* createMateria(std::string const& type) override;
 };
 
 #endif

@@ -17,9 +17,17 @@ int main() {
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << "\n--- Copy Constructor and copy assignment test---\n" << std::endl;
+
+	// Dog doggo;
+	// Dog copyDog(doggo);
+	// copyDog.makeSound();
+
 	delete meta;
 	delete j;
 	delete i;
+
+	std::cout << "\n--- Wrong AnimalCat creation ---\n" << std::endl;
 
 	const WrongAnimal* meta2 = new WrongAnimal();
 	const WrongAnimal* j2 = new WrongCat();

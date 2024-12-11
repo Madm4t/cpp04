@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/11 16:36:50 by mgering           #+#    #+#             */
+/*   Updated: 2024/12/11 17:05:01 by mgering          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CURE_HPP
-#define Cure_HPP
+#define CURE_HPP
 
 #include "AMateria.hpp"
 
@@ -11,8 +23,8 @@ public:
 	Cure& operator=(const Cure& other);
 	virtual ~Cure();
 
-	virtual AMateria* clone() const;
-	virtual void use(ICharacter& target);
+	virtual AMateria* clone() const override;
+	virtual void use(ICharacter& target) override;
 };
 
 #endif

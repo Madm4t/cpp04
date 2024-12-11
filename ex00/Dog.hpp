@@ -12,7 +12,7 @@ public:
 	Dog& operator=(const Dog& other);
 	virtual ~Dog();
 
-	virtual void makeSound() const;
+	void makeSound() const override;
 };
 
 #endif

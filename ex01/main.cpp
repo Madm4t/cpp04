@@ -47,6 +47,7 @@ int main() {
 	cat1.getBrain()->setIdea(0, "I want to sleep");
 	Cat cat2;
 	cat2 = cat1;
+	std::cout << "Cat2's idea: " << cat2.getBrain()->getIdea(0) << std::endl;
 	cat2.getBrain()->setIdea(0, "I want to eat");
 
 	std::cout << "Cat1's idea: " << cat1.getBrain()->getIdea(0) << std::endl;

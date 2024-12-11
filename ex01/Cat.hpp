@@ -16,7 +16,7 @@ public:
 	Cat& operator=(const Cat& other);
 	virtual ~Cat();
 
-	virtual void makeSound() const;
+	void makeSound() const override;
 	Brain* getBrain() const;
 };
 

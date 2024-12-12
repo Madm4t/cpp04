@@ -6,20 +6,20 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:43:04 by mgering           #+#    #+#             */
-/*   Updated: 2024/12/11 17:02:30 by mgering          ###   ########.fr       */
+/*   Updated: 2024/12/12 16:07:16 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
-	std::cout << "MateriaSource default constructor." << std::endl;
+	//std::cout << "MateriaSource default constructor." << std::endl;
 	for (int i = 0; i < 4; i++)
 		_templates[i] = nullptr;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
-	std::cout << "MateriaSource copy constructor called." << std::endl;
+	//std::cout << "MateriaSource copy constructor called." << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if(other._templates[i])
 			_templates[i] = other._templates[i]->clone();
@@ -29,7 +29,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource& other) {
-	std::cout << "MateriaSource copy assignment operator called." << std::endl;
+	//std::cout << "MateriaSource copy assignment operator called." << std::endl;
 	if (this != &other) {
 		for (int i = 0; i < 4; i++) {
 			delete _templates[i];
@@ -46,7 +46,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource& other) {
 }
 
 MateriaSource::~MateriaSource() {
-	std::cout << "MateriaSource Destructor called." << std::endl;
+	//std::cout << "MateriaSource Destructor called." << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (_templates[i])
 			delete _templates[i];
@@ -55,13 +55,13 @@ MateriaSource::~MateriaSource() {
 
 void MateriaSource::learnMateria(AMateria* m) {
 	if (!m) {
-		std::cout << "Chose Materia ice or cure." << std::endl;
+		//std::cout << "Chose Materia ice or cure." << std::endl;
 		return;
 	}
 	for (int i = 0; i < 4; i++) {
 		if (!_templates[i]) {
 			_templates[i] = m->clone();
-			std::cout << " Learned Materia [" << _templates[i] << "]" << std::endl;
+			//std::cout << " Learned Materia [" << _templates[i] << "]" << std::endl;
 			delete m;
 			return;
 		}

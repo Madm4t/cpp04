@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:01:12 by mgering           #+#    #+#             */
-/*   Updated: 2024/12/11 16:06:19 by mgering          ###   ########.fr       */
+/*   Updated: 2024/12/12 15:46:17 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ private:
 	std::string _name;
 	AMateria* _inventory[4];
 
+	AMateria* _unequipped[4];
+	int _unequippedCount;
 public:
 	Character();
 	Character(std::string const& name);
